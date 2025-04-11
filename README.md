@@ -1,32 +1,53 @@
-# Çiftçi Dostu - Hava Durumuna Göre Tarımsal Öneri Uygulaması 🌾🌤️
+# 🌱 Çiftçi Dostu - Hava Durumuna Göre Tarımsal Öneri Uygulaması
 
-**Çiftçi Dostu**, hava durumu verilerini analiz ederek çiftçilere özel öneriler sunan bir uygulamadır. Uygulama sayesinde çiftçiler; sulama, ilaçlama ve ekim gibi işlemleri doğru zamanlarda yaparak verimliliği artırabilir ve kaynak israfını önleyebilir.
+**Çiftçi Dostu**, çiftçilere özel geliştirilmiş Flutter tabanlı bir mobil uygulamadır. Uygulama, güncel hava durumu verilerini analiz ederek sulama, ilaçlama ve don riski gibi önemli konularda çiftçiye öneriler sunar. Hedef, tarımda verimliliği artırmak ve doğal kaynak kullanımını optimize etmektir.
 
-## 🚀 Özellikler
+---
 
-- 🌤️ **Gerçek Zamanlı Hava Durumu**: OpenWeatherMap API ile güncel hava durumu bilgileri alınır.
-- 🧠 **Yapay Zeka Destekli Öneriler**: Hava durumuna göre uygun tarımsal faaliyetler önerilir (sulama, ilaçlama, ekim vs.).
-- 📲 **Kullanıcı Dostu Arayüz**: Basit, sade ve çiftçilerin kolayca kullanabileceği bir mobil arayüz.
-- 🔔 **Uyarı Sistemi**: Ani hava değişikliklerine karşı uyarılar gösterilir.
-- 📍 **Konum Bazlı Hizmet**: Bulunduğunuz konuma göre öneriler sunar.
+## 📱 Özellikler
 
-## 🛠️ Kullanılan Teknolojiler
+- ☁️ OpenWeatherMap API'den alınan **hava durumu verileri**
+- 📍 Kullanıcıdan alınan şehir bilgisine göre veri sorgulama
+- 🌾 Tarım faaliyetleri için **otomatik öneri sistemi**:
+  - Yağmur varsa ilaçlama yapma
+  - Don riski varsa uyarı
+  - Yüksek sıcaklıklarda sulama zamanı önerisi
+- 🎨 Şık ve sade arayüz (arkaplan görselli)
+- 📷 Hava durumu ikonları ve animasyonlu bilgi kartları
 
-- **Flutter / Dart** - Mobil uygulama geliştirme
-- **OpenWeatherMap API** - Hava durumu verileri için
-- **Python (FastAPI / TensorFlow / Scikit-learn)** - Yapay zeka öneri motoru ve API servisi
+---
 
-## 🔍 Nasıl Çalışır?
+## 🧠 Öneri Sistemi Nasıl Çalışır?
 
-1. Kullanıcı, uygulamayı açarak konumunu seçer.
-2. Sistem, OpenWeatherMap API üzerinden güncel hava durumu verilerini çeker.
-3. Yapay zeka modeli, bu verileri analiz ederek öneri motorunu çalıştırır.
-4. Elde edilen öneriler kullanıcıya anlaşılır şekilde sunulur (örneğin: "Bugün rüzgar az, ilaçlama yapabilirsiniz").
+Uygulama, sıcaklık ve hava durumu koşullarını değerlendirerek öneri sunar:
 
-## 🧪 Kurulum ve Başlatma
+| Koşul               | Öneri                                       | Renk      | İkon  |
+|---------------------|----------------------------------------------|-----------|--------|
+| Yağmur              | İlaçlama yapmayın.                          | Mavi      | 🌧️     |
+| Kar / Soğuk (<5°C)  | Don riski olabilir!                         | Kırmızı   | ❄️     |
+| Sıcak (>30°C)       | Sulamayı sabah erken yapın.                | Turuncu   | 🔥     |
+| Normal hava         | Tarım faaliyetlerine devam edebilirsiniz.  | Yeşil     | 🌤️     |
+
+---
+
+## 🧰 Kullanılan Teknolojiler
+
+- **Flutter** (Mobil uygulama geliştirme)
+- **Dart** (Flutter dil altyapısı)
+- **HTTP Paketi** (`http: ^0.13.5`)
+- **OpenWeatherMap API** (Gerçek zamanlı hava verisi)
+- **Material Design** öğeleri
+- **Asset image** (Tarla görseli arka plan olarak kullanıldı)
+
+---
+
+## 📂 Proje Yapısı
 
 ```bash
-git clone https://github.com/kullaniciadi/ciftci-dostu.git
-cd ciftci-dostu
-flutter pub get
-flutter run
+/lib
+  └── main.dart                # Ana uygulama dosyası (arayüz ve mantık)
+/services
+  └── weather_service.dart     # Hava durumu verisi API bağlantısı
+/assets/images
+  └── yesil_tarla.jpg          # Uygulama arka plan görseli
+/pubspec.yaml                  # Bağımlılıklar ve varlıklar
