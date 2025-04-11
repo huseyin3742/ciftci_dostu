@@ -1,6 +1,6 @@
 # Çiftçi Dostu - Hava Durumuna Göre Tarımsal Öneri Uygulaması 🌾🌤️
 
-**Çiftçi Dostu**, hava durumu verilerini analiz ederek çiftçilere özel öneriler sunan bir mobil uygulamadır. Uygulama sayesinde çiftçiler; sulama, ilaçlama ve ekim gibi işlemleri doğru zamanlarda yaparak verimliliği artırabilir ve kaynak israfını önleyebilir.
+**Çiftçi Dostu**, hava durumu verilerini analiz ederek çiftçilere özel öneriler sunan bir uygulamadır. Uygulama sayesinde çiftçiler; sulama, ilaçlama ve ekim gibi işlemleri doğru zamanlarda yaparak verimliliği artırabilir ve kaynak israfını önleyebilir.
 
 ## 🚀 Özellikler
 
@@ -15,7 +15,6 @@
 - **Flutter / Dart** - Mobil uygulama geliştirme
 - **OpenWeatherMap API** - Hava durumu verileri için
 - **Python (FastAPI / TensorFlow / Scikit-learn)** - Yapay zeka öneri motoru ve API servisi
-- **Firebase / MQTT** *(isteğe bağlı)* - Gerçek zamanlı bildirimler ve IoT cihaz entegrasyonu
 
 ## 🔍 Nasıl Çalışır?
 
